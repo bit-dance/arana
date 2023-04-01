@@ -132,3 +132,4 @@ require (
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	sigs.k8s.io/yaml v1.2.0 // indirect
 )
+replace github.com/arana-db/parser v0.2.11 => G:\github\parser

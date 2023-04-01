@@ -34,6 +34,7 @@ var (
 	_ Statement = (*ShowColumns)(nil)
 	_ Statement = (*ShowIndex)(nil)
 	_ Statement = (*ShowTopology)(nil)
+	_ Statement = (*ShowTableRules)(nil)
 	_ Statement = (*ShowTableStatus)(nil)
 	_ Statement = (*ShowWarnings)(nil)
 	_ Statement = (*ShowMasterStatus)(nil)
@@ -140,6 +141,18 @@ func (s ShowTopology) Mode() SQLType {
 }
 
 func (s ShowTopology) Restore(flag RestoreFlag, sb *strings.Builder, args *[]int) error {
+	return s.baseShow.Restore(flag, sb, args)
+}
+
+type ShowTableRules struct {
+	*baseShow
+}
+
+func (s ShowTableRules) Mode() SQLType {
+	return SQLTypeShowTableRules
+}
+
+func (s ShowTableRules) Restore(flag RestoreFlag, sb *strings.Builder, args *[]int) error {
 	return s.baseShow.Restore(flag, sb, args)
 }
 

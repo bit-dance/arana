@@ -32,6 +32,17 @@ var (
 	Database = Thead{
 		Col{Name: "Database", FieldType: consts.FieldTypeVarString},
 	}
+	Rules = Thead{
+		Col{Name: "id", FieldType: consts.FieldTypeLongLong},
+		Col{Name: "table_name", FieldType: consts.FieldTypeVarString},
+		Col{Name: "BROADCAST", FieldType: consts.FieldTypeInt24},
+		Col{Name: "DB_PARTITION_KEY", FieldType: consts.FieldTypeVarString},
+		Col{Name: "DB_PARTITION_POLICY", FieldType: consts.FieldTypeVarString},
+		Col{Name: "DB_PARTITION_COUNT", FieldType: consts.FieldTypeInt24},
+		Col{Name: "TB_PARTITION_KEY", FieldType: consts.FieldTypeVarString},
+		Col{Name: "TB_PARTITION_POLICY", FieldType: consts.FieldTypeVarString},
+		Col{Name: "TB_PARTITION_COUNT", FieldType: consts.FieldTypeInt24},
+	}
 )
 
 type Col struct {

@@ -59,6 +59,7 @@ type VTable struct {
 	autoIncrement *AutoIncrement
 	topology      *Topology
 	shards        map[string][2]*ShardMetadata // column -> [db shard metadata,table shard metadata]
+	tableRules    *TableRules
 }
 
 func (vt *VTable) HasColumn(column string) bool {
